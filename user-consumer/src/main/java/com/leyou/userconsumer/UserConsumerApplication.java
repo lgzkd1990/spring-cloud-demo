@@ -13,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
 public class UserConsumerApplication {
 
     @Bean
-    @LoadBalanced
+    @LoadBalanced//内置拦截器
     public RestTemplate restTemplate() {
         // 这次我们使用了OkHttp客户端,只需要注入工厂即可
         return new RestTemplate(new OkHttp3ClientHttpRequestFactory());
